@@ -35,27 +35,50 @@ object FormViewCadastroPessoa: TFormViewCadastroPessoa
     Height = 13
     Caption = 'Data Nasc'
   end
-  object DBEditNome: TDBEdit
-    Left = 160
-    Top = 152
-    Width = 185
-    Height = 21
-    TabOrder = 0
+  object Label4: TLabel
+    Left = 104
+    Top = 115
+    Width = 55
+    Height = 13
+    Caption = 'Cod Cliente'
   end
-  object DBEditcpf: TDBEdit
-    Left = 160
-    Top = 192
+  object ButtonSalvar: TButton
+    Left = 608
+    Top = 432
+    Width = 75
+    Height = 25
+    Caption = 'Salvar'
+    TabOrder = 0
+    OnClick = ButtonSalvarClick
+  end
+  object EditNome: TEdit
+    Left = 176
+    Top = 152
     Width = 121
     Height = 21
     TabOrder = 1
   end
+  object EditCpf: TEdit
+    Left = 176
+    Top = 192
+    Width = 121
+    Height = 21
+    TabOrder = 2
+  end
   object DateTimePickerNasc: TDateTimePicker
-    Left = 159
-    Top = 231
+    Left = 176
+    Top = 230
     Width = 186
     Height = 21
-    Date = 45000.406064756940000000
-    Time = 45000.406064756940000000
-    TabOrder = 2
+    Date = 45001.385010277780000000
+    Time = 45001.385010277780000000
+    TabOrder = 3
+  end
+  object EditIdCliente: TEdit
+    Left = 176
+    Top = 112
+    Width = 121
+    Height = 21
+    TabOrder = 4
   end
 end

@@ -7,7 +7,10 @@ uses
   UnitControllerConexao in 'Controller\UnitControllerConexao.pas',
   UnitDAOConexao in 'DAO\UnitDAOConexao.pas',
   UnitDAODriverLink in 'DAO\UnitDAODriverLink.pas',
-  UnitControllerDriverLink in 'Controller\UnitControllerDriverLink.pas';
+  UnitControllerDriverLink in 'Controller\UnitControllerDriverLink.pas',
+  UnitModelCliente in 'Model\UnitModelCliente.pas',
+  UnitDAOCliente in 'DAO\UnitDAOCliente.pas',
+  UnitControllerCliente in 'Controller\UnitControllerCliente.pas';
 
 {$R *.res}
 

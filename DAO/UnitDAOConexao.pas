@@ -13,6 +13,7 @@ type
       FConexao : TFDConnection;
     public
       function getConexao : TFDConnection;
+      function criarQuery : TFDQuery;
 
       constructor Create;
       destructor Destroy; override;
@@ -31,8 +32,17 @@ begin
   FConexao.Params.Database := 'mvc';
   FConexao.Params.UserName := 'postgres';
   FConexao.Params.Password := 'postgres';
- // FConexao.Params.add := 'localhost';
   FConexao.LoginPrompt := false;
+end;
+
+function TDAOConexao.criarQuery: TFDQuery;
+var
+  Query : TFDQuery;
+begin
+  Query := TFDQuery.Create(nil);
+  Query.Connection := FConexao;
+
+  Result := Query;
 end;
 
 destructor TDAOConexao.Destroy;
