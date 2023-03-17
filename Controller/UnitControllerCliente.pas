@@ -2,7 +2,7 @@ unit UnitControllerCliente;
 
 interface
 
-uses UnitModelCliente;
+uses UnitModelCliente, System.SysUtils ,FireDAC.Comp.Client;
 
 type
   TControllerCliente = class
@@ -11,6 +11,9 @@ type
 
     public
       property ModelCliente : TModelCliente read FModelCliente write FModelCliente;
+
+      function Persistir : Boolean;
+      function Selecionar : TFDQuery;
 
       constructor Create;
       destructor Destroy; override;
@@ -32,6 +35,16 @@ destructor TControllerCliente.Destroy;
 begin
   FModelCliente.Free;
   inherited;
+end;
+
+function TControllerCliente.Persistir: Boolean;
+begin
+  result := FModelCliente.Persistir;
+end;
+
+function TControllerCliente.Selecionar: TFDQuery;
+begin
+  result := FModelCliente.Selecionar;
 end;
 
 end.

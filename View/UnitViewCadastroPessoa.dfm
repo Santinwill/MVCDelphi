@@ -12,61 +12,62 @@ object FormViewCadastroPessoa: TFormViewCadastroPessoa
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 104
+    Left = 40
     Top = 155
     Width = 31
     Height = 13
     Caption = 'Nome:'
   end
   object Label2: TLabel
-    Left = 104
+    Left = 40
     Top = 195
     Width = 23
     Height = 13
     Caption = 'CPF:'
   end
   object Label3: TLabel
-    Left = 104
+    Left = 40
     Top = 235
     Width = 49
     Height = 13
     Caption = 'Data Nasc'
   end
   object Label4: TLabel
-    Left = 104
+    Left = 40
     Top = 115
     Width = 55
     Height = 13
     Caption = 'Cod Cliente'
   end
   object ButtonSalvar: TButton
-    Left = 608
-    Top = 432
+    Left = 112
+    Top = 280
     Width = 75
     Height = 25
-    Caption = 'Salvar'
+    Caption = 'Salvar Novo'
     TabOrder = 0
     OnClick = ButtonSalvarClick
   end
   object EditNome: TEdit
-    Left = 176
+    Left = 112
     Top = 152
     Width = 121
     Height = 21
     TabOrder = 1
   end
   object EditCpf: TEdit
-    Left = 176
+    Left = 112
     Top = 192
     Width = 121
     Height = 21
     TabOrder = 2
   end
   object DateTimePickerNasc: TDateTimePicker
-    Left = 176
+    Left = 112
     Top = 230
     Width = 186
     Height = 21
@@ -75,10 +76,59 @@ object FormViewCadastroPessoa: TFormViewCadastroPessoa
     TabOrder = 3
   end
   object EditIdCliente: TEdit
-    Left = 176
+    Left = 112
     Top = 112
     Width = 121
     Height = 21
     TabOrder = 4
+  end
+  object DBGrid1: TDBGrid
+    Left = 363
+    Top = 112
+    Width = 320
+    Height = 136
+    DataSource = DataSource
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    TabOrder = 5
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    OnDblClick = DBGrid1DblClick
+  end
+  object ButtonPesquisar: TButton
+    Left = 496
+    Top = 254
+    Width = 75
+    Height = 25
+    Caption = 'Pesquisar'
+    TabOrder = 6
+    OnClick = ButtonPesquisarClick
+  end
+  object ButtonAlterar: TButton
+    Left = 223
+    Top = 280
+    Width = 75
+    Height = 25
+    Caption = 'Alterar'
+    TabOrder = 7
+    OnClick = ButtonAlterarClick
+  end
+  object DataSource: TDataSource
+    DataSet = MemTable
+    Left = 584
+    Top = 160
+  end
+  object MemTable: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 424
+    Top = 176
   end
 end

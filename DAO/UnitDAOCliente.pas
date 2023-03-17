@@ -6,12 +6,11 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf,
   FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
   FireDAC.Phys, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client, System.SysUtils,
-  UnitControllerConexao, UnitModelCliente;
+  vcl.Dialogs, UnitControllerConexao, UnitModelCliente;
 
 type
   TDAOCliente = class
     private
-    function persistir: Boolean;
 
     protected
 
@@ -41,9 +40,12 @@ begin
                            '   FROM CLIENTE     ' +
                            '  WHERE IDCLIENTE = :IDCLIENTE ';
       Qcliente.ParamByName('IDCLIENTE').AsInteger := ModelCliente.StrId;
+      showmessage(Qcliente.SQL.Text);
       Qcliente.Open;
       Qcliente.Edit;
       Qcliente.FieldByName('NMCLIENTE').AsString := ModelCliente.StrNome;
+      Qcliente.FieldByName('CPFCLIENTE').AsString := ModelCliente.StrCpf;
+      Qcliente.FieldByName('DTCLIENTE').AsDateTime := StrToDate(ModelCliente.StrNasc);
       Qcliente.Post;
     finally
       Qcliente.Free;
@@ -66,7 +68,6 @@ begin
                            '        CPFCLIENTE, ' +
                            '        DTCLIENTE   ' +
                            '   FROM CLIENTE     ' ;
-      Qcliente.ParamByName('IDCLIENTE').AsInteger := ModelCliente.StrId;
       Qcliente.Open;
       Qcliente.Append;
       Qcliente.FieldByName('NMCLIENTE').AsString := ModelCliente.StrNome;
@@ -87,12 +88,11 @@ var
   Qcliente : TFDQuery;
 begin
   Qcliente := TControllerConexao.getInstance.daoConexao.criarQuery;
-  Qcliente.Open;
   Qcliente.SQL.Text := ' SELECT IDCLIENTE,  ' +
-                           '        NMCLIENTE,  ' +
-                           '        CPFCLIENTE, ' +
-                           '        DTCLIENTE   ' +
-                           '   FROM CLIENTE     ' ;
+                       '        NMCLIENTE,  ' +
+                       '        CPFCLIENTE, ' +
+                       '        DTCLIENTE   ' +
+                       '   FROM CLIENTE     ' ;
   Result := Qcliente;
 end;
 

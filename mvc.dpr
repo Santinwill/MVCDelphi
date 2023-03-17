@@ -10,7 +10,8 @@ uses
   UnitControllerDriverLink in 'Controller\UnitControllerDriverLink.pas',
   UnitModelCliente in 'Model\UnitModelCliente.pas',
   UnitDAOCliente in 'DAO\UnitDAOCliente.pas',
-  UnitControllerCliente in 'Controller\UnitControllerCliente.pas';
+  UnitControllerCliente in 'Controller\UnitControllerCliente.pas',
+  UnitEnumerador in 'Model\UnitEnumerador.pas';
 
 {$R *.res}
 
