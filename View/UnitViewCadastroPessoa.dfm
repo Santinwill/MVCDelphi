@@ -18,16 +18,16 @@ object FormViewCadastroPessoa: TFormViewCadastroPessoa
   object Label1: TLabel
     Left = 40
     Top = 155
-    Width = 31
+    Width = 37
     Height = 13
-    Caption = 'Nome:'
+    Caption = '*Nome:'
   end
   object Label2: TLabel
     Left = 40
     Top = 195
-    Width = 23
+    Width = 29
     Height = 13
-    Caption = 'CPF:'
+    Caption = '*CPF:'
   end
   object Label3: TLabel
     Left = 40
@@ -65,6 +65,7 @@ object FormViewCadastroPessoa: TFormViewCadastroPessoa
     Width = 121
     Height = 21
     TabOrder = 2
+    OnExit = EditCpfExit
   end
   object DateTimePickerNasc: TDateTimePicker
     Left = 112

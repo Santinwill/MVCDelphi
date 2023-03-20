@@ -40,7 +40,6 @@ begin
                            '   FROM CLIENTE     ' +
                            '  WHERE IDCLIENTE = :IDCLIENTE ';
       Qcliente.ParamByName('IDCLIENTE').AsInteger := ModelCliente.StrId;
-      showmessage(Qcliente.SQL.Text);
       Qcliente.Open;
       Qcliente.Edit;
       Qcliente.FieldByName('NMCLIENTE').AsString := ModelCliente.StrNome;
