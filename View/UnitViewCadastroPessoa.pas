@@ -100,6 +100,7 @@ end;
 procedure TFormViewCadastroPessoa.ButtonSalvarClick(Sender: TObject);
 var
   controllerCliente : TControllerCliente;
+  i: Integer;
 begin
   controllerCliente := TControllerCliente.Create;
   try
@@ -114,7 +115,27 @@ begin
     end
     else
     begin
-      showmessage('Não foi possivel realizar operação');
+      if controllerCliente.ModelCliente.widAlerta = '' then
+      begin
+        showmessage('Não foi possivel realizar operação');
+      end
+      else
+      begin
+        for i := 0 to ComponentCount -1 do
+          begin
+            if ((Components[i] is TLabel)) and ((Components[i] as TLabel).Tag = 1) then
+            begin
+              (Components[i] as TLabel).Font.Color := $00bbbbff;
+            end
+            else if ((Components[i] is TEdit)) and ((Components[i] as TEdit).Tag = 1) then
+            begin
+              (Components[i] as TEdit).Color := $00bbbbff;
+            end;
+          end;
+
+          ShowMessage(controllerCliente.ModelCliente.widAlerta);
+
+      end;
     end;
 
   finally
@@ -166,12 +187,12 @@ begin
     if (strCpf[1] = '') or (strCpf[2] = '') or (strCpf[3] = '') or
      (strCpf[4] = '') or (strCpf[5] = '') or (strCpf[6] = '') or
      (strCpf[7] = '') or (strCpf[8] = '') or (strCpf[9] = '') then
-  begin
-    ShowMessage('CPF inválido');
-    EditCpf.Text := '';
-    EditCpf.SetFocus;
-    Exit;
-  end;
+    begin
+      ShowMessage('CPF inválido');
+      EditCpf.Text := '';
+      EditCpf.SetFocus;
+      Exit;
+    end;
 
   n1 := StrToInt(strCpf[1]);
   n2 := StrToInt(strCpf[2]);

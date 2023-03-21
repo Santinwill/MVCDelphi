@@ -16,18 +16,32 @@ object FormViewCadastroPessoa: TFormViewCadastroPessoa
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
+    Tag = 1
     Left = 40
     Top = 155
     Width = 37
     Height = 13
     Caption = '*Nome:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Label2: TLabel
+    Tag = 1
     Left = 40
     Top = 195
     Width = 29
     Height = 13
     Caption = '*CPF:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
   end
   object Label3: TLabel
     Left = 40
@@ -53,6 +67,7 @@ object FormViewCadastroPessoa: TFormViewCadastroPessoa
     OnClick = ButtonSalvarClick
   end
   object EditNome: TEdit
+    Tag = 1
     Left = 112
     Top = 152
     Width = 121
@@ -60,6 +75,7 @@ object FormViewCadastroPessoa: TFormViewCadastroPessoa
     TabOrder = 1
   end
   object EditCpf: TEdit
+    Tag = 1
     Left = 112
     Top = 192
     Width = 121
