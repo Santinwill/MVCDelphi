@@ -11,7 +11,9 @@ uses
   UnitModelCliente in 'Model\UnitModelCliente.pas',
   UnitDAOCliente in 'DAO\UnitDAOCliente.pas',
   UnitControllerCliente in 'Controller\UnitControllerCliente.pas',
-  UnitEnumerador in 'Model\UnitEnumerador.pas';
+  UnitEnumerador in 'Model\UnitEnumerador.pas',
+  UnitClassFunctionValidarClasse in 'ClassFunction\UnitClassFunctionValidarClasse.pas',
+  UnitClassFunctionValidarCpf in 'ClassFunction\UnitClassFunctionValidarCpf.pas';
 
 {$R *.res}
 
@@ -19,6 +21,5 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TFormViewTelaPrincipal, FormViewTelaPrincipal);
-  Application.CreateForm(TFormViewCadastroPessoa, FormViewCadastroPessoa);
   Application.Run;
 end.
