@@ -60,7 +60,7 @@ object FormViewCadastroPessoa: TFormViewCadastroPessoa
   object ButtonSalvar: TButton
     Left = 112
     Top = 280
-    Width = 75
+    Width = 81
     Height = 25
     Caption = 'Salvar Novo'
     TabOrder = 0
@@ -124,28 +124,25 @@ object FormViewCadastroPessoa: TFormViewCadastroPessoa
     OnClick = ButtonPesquisarClick
   end
   object ButtonAlterar: TButton
-    Left = 223
+    Left = 216
     Top = 280
-    Width = 75
+    Width = 82
     Height = 25
     Caption = 'Alterar'
     TabOrder = 7
     OnClick = ButtonAlterarClick
   end
+  object ButtonLimparCampos: TButton
+    Left = 216
+    Top = 336
+    Width = 82
+    Height = 25
+    Caption = 'Limpar Campos'
+    TabOrder = 8
+    OnClick = ButtonLimparCamposClick
+  end
   object DataSource: TDataSource
-    DataSet = MemTable
     Left = 584
     Top = 160
-  end
-  object MemTable: TFDMemTable
-    FetchOptions.AssignedValues = [evMode]
-    FetchOptions.Mode = fmAll
-    ResourceOptions.AssignedValues = [rvSilentMode]
-    ResourceOptions.SilentMode = True
-    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
-    UpdateOptions.CheckRequired = False
-    UpdateOptions.AutoCommitUpdates = True
-    Left = 424
-    Top = 176
   end
 end

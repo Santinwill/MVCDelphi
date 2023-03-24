@@ -27,13 +27,14 @@ type
     ButtonPesquisar: TButton;
     ButtonAlterar: TButton;
     DataSource: TDataSource;
-    MemTable: TFDMemTable;
+    ButtonLimparCampos: TButton;
     procedure ButtonSalvarClick(Sender: TObject);
     procedure ButtonPesquisarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure DBGrid1DblClick(Sender: TObject);
     procedure ButtonAlterarClick(Sender: TObject);
     procedure EditCpfExit(Sender: TObject);
+    procedure ButtonLimparCamposClick(Sender: TObject);
   private
     { Private declarations }
     procedure limpaCampos;
@@ -79,6 +80,11 @@ begin
   limpaCampos;
   qCliente.Refresh;
   DBGrid1.Refresh;
+end;
+
+procedure TFormViewCadastroPessoa.ButtonLimparCamposClick(Sender: TObject);
+begin
+ limpaCampos;
 end;
 
 procedure TFormViewCadastroPessoa.ButtonPesquisarClick(Sender: TObject);
